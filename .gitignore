@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+.idea/typescript-compiler.xml
+app/**/*.js
+app/**/*.map
+typings/

@@ -1,0 +1,23 @@
+<div class="pure-g outlet" *ngIf='!auth.authenticated()'>
+    <div class="pure-u-1">
+        <h1 class="welcome-header">Welcome to the Incredible Intern Race</h1>
+        <!--<img class="scaled-image" src="img/logo.png">-->
+    </div>
+
+    <button class="login-button pure-u-1 pure-button pure-button-primary" (click)="auth.login()">Log In / Register</button>
+</div>
+
+<div class="pure-g" *ngIf='auth.authenticated()'>
+
+    <div *ngIf="user" class="pure-u-1 title-bar" [style.background]="user.team.color">
+        <div class="app-name">The Incredible Intern Race</div>
+        <div class="user-info">{{user.team.name}} | {{user.givenName}}</div>
+
+    </div>
+</div>
+
+<router-outlet *ngIf='auth.authenticated()'></router-outlet>
+
+<div class="help" *ngIf='auth.authenticated()'>
+<p>Problems? Call <a href="tel:210-859-2577">(210) 859-2577</a></p>
+</div>

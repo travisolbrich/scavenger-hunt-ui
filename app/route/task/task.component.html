@@ -1,0 +1,19 @@
+<div class="pure-g outlet">
+    <div class="pure-u-1"><h2>Task: </h2></div>
+    <div class="pure-u-1" *ngIf="progressionStatus">
+
+        <div *ngIf="progressionStatus.nextName == 'TASK'">
+            <div class="task" *ngIf="task" [innerHTML]="task.question"></div>
+            <div class="wrong-answer" *ngIf="wrongAnswer">That is not the right answer!</div>
+
+            <form class="pure-form" action="#">
+                <fieldset>
+                    <input placeholder="Enter Your Answer" #answer>
+
+                    <button class="answer-button pure-button pure-button-primary" (click)="checkAnswer(answer.value)">Submit</button>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</div>

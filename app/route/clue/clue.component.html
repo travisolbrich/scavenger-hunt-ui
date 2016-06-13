@@ -1,0 +1,10 @@
+<div class="pure-g outlet">
+    <div class="pure-u-1"><h2>Clue: </h2></div>
+    <div class="pure-u-1" *ngIf="progressionStatus">
+
+        <div *ngIf="progressionStatus.nextName == 'CLUE'">
+            <div  *ngIf="clue" [innerHTML]="clue.clue"></div>
+        </div>
+    </div>
+</div>
+
